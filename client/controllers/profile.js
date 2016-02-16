@@ -34,6 +34,7 @@ app.controller('profileCtrl', function($scope, $rootScope, $http, $window) {
     // create payload
     var payload = {};
     payload.email = email;
+    payload._id = currentUser._id;
     if(password) {
       payload.password = password;
     }
@@ -66,6 +67,7 @@ app.controller('profileCtrl', function($scope, $rootScope, $http, $window) {
     // create payload
     var payload = {};
     payload.email = email;
+    payload._id = currentUser._id;
     payload.username = username;
     payload.sexuality = sexuality;
     payload.gender = gender;
@@ -132,7 +134,6 @@ app.controller('profileCtrl', function($scope, $rootScope, $http, $window) {
   $scope.updateProfiles = function(){
     $http.get('/auth/users').then(function( response ){
       $scope.users = response.data.users;
-
     });
   };
 

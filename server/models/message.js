@@ -5,6 +5,7 @@ var config = require('../../_config');
 
 var Message = new Schema({
   messageBody: { type: String },
+  messageSubject: { type: String },
   messageTo: { type: Schema.Types.ObjectId },
   messageFrom: { type: Schema.Types.ObjectId }
 }, {timestamps: true });

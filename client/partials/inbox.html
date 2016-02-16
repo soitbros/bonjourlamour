@@ -1,0 +1,8 @@
+<div ng-repeat="message in messages">
+  <a href="#/message/{{$index}}">
+    <div class="">
+      From: {{message.messageFrom.username}},  To: {{message.messageTo.username}}:<br/>
+      {{message.messageBody}}
+    </div>
+  </a>
+</div>

@@ -39,6 +39,21 @@ app.config(function($routeProvider, $authProvider, $locationProvider) {
       templateUrl: 'partials/detail.html',
       controller: 'profileDetail'
     })
+    .when('/inbox', {
+      templateUrl: 'partials/inbox.html',
+      controller: 'inboxCtrl'
+    })
+    .when('/messages', {
+      templateUrl: 'partials/messages.html',
+      controller: 'messageCtrl'
+    })
+    .when('/message/:id', {
+      templateUrl: 'partials/message.html',
+      controller: 'messageScreen'
+    })
+    .when('/messageform/:id', {
+      templateUrl: 'partials/messageform.html',
+      controller: 'messageForm'
+    })
     .otherwise('/');
-
 });

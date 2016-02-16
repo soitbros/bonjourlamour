@@ -13,10 +13,14 @@
   <script type="text/javascript" src="app.js"></script>
   <script type="text/javascript" src="controllers/navbar.js"></script>
   <script type="text/javascript" src="controllers/login.js"></script>
+  <script type="text/javascript" src="controllers/inbox.js"></script>
   <script type="text/javascript" src="controllers/signup.js"></script>
   <script type="text/javascript" src="controllers/profile.js"></script>
   <script type="text/javascript" src="controllers/upload.js"></script>
   <script type="text/javascript" src="controllers/detail.js"></script>
+  <script type="text/javascript" src="controllers/message.js"></script>
+  <script type="text/javascript" src="controllers/messageform.js"></script>
+
   <style>body {padding-top: 70px;}</style>
 </head>
 <body>
@@ -42,7 +46,8 @@
           <ul class="nav navbar-nav">
             <li ng-if="!isAuthenticated()"><a href="#/login">Login</a></li>
             <li ng-if="!isAuthenticated()"><a href="#/signup">Signup</a></li>
-            <li ng-if="isAuthenticated()"><a href="#/profile">{{username || User}}</a></li>
+            <li ng-if="isAuthenticated()"><a href="#/profile">Profile</a></li>
+            <li ng-if="isAuthenticated()"><a href="#/inbox">Inbox</a></li>
             <li ng-if="isAuthenticated()"><a href="#/update">Update</a></li>
             <li ng-if="isAuthenticated()"><a href="#/upload">Upload</a></li>
             <li ng-if="isAuthenticated()"><a ng-click="logout()" href="">Logout</a></li>

@@ -1,0 +1,13 @@
+Message me!
+
+<div class="">
+  <form ng-submit="sendMessage(messageSubject, messageBody)">
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="messageSubject" placeholder="Catch my attention here!" required>
+    </div>
+    <div class="form-group">
+      <input type="textarea" class="form-control" ng-model="messageBody" placeholder="Keep my attention here!" required>
+    </div>
+    <button type="submit" class="btn btn-default btn-block">Update</button>
+  </form>
+</div>

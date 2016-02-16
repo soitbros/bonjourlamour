@@ -148,7 +148,28 @@ router.get('/users', ensureAuthenticated, function(req, res){ //pass through res
   });
 });
 
+router.put('/messages', ensureAuthenticated, function(req, res) {
+  req.body.messageFrom = req.user.id;
+  Message.create(req.body, function(err, user) {
+    if (!user) {
+      return res.status(401).send({
+        message: {
+          email: 'Incorrect email'
+        }
+      });
+    }
+  });
+});
+
+router.get('/messages', ensureAuthenticated, function(req, res){
+  console.log(req);
+  Message.find( {$or : [{'messageFrom': req.user.id},{'messageTo': req.user.id}]}, function(err, messages){
+    res.json({ messages: messages })
+  });
+});
+
 router.get('/users/:id/messages', ensureAuthenticated, function(req, res){
+  console.log(req);
   Message.find( {$or : [{'messageFrom': req.user.id,'messageTo': req.params.id},{'messageFrom': req.params.id,'messageTo': req.user.id}]}, function(err, messages){
     res.json({ messages: messages })
   });
