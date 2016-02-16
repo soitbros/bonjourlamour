@@ -1,0 +1,7 @@
+.profiles * {
+    display:inline-block;
+}
+
+.profiles img {
+  max-height: 200px;
+}

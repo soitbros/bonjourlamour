@@ -1,0 +1,85 @@
+<h1>Welcome, {{username}}!</h1>
+
+<hr><br>
+
+<div ng-if="message">
+  <h3>{{message}}</h3>
+</div>
+
+<div class="col-md-4 col-md-offset-1">
+  <h2>Add Username</h2>
+  <form ng-submit="updateUsername(email, username, sexuality, gender, image, age, pronoun_obj, pronoun_sub, pronoun_self, movie, book, music, tv, game, bio, height, build, ethnicity, astrology, religion, income, looking)">
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="username" placeholder="Enter a new name" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="sexuality" placeholder="Enter sexuality" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="gender" placeholder="Enter gender" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="image" placeholder="Whatever" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="age" placeholder="Enter birthdate" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="pronoun_obj" placeholder="Enter pronoun_obj" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="pronoun_sub" placeholder="Enter pronoun_sub" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="pronoun_self" placeholder="Enter pronoun_self" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="movie" placeholder="Enter movie" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="book" placeholder="Enter book" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="music" placeholder="Enter music" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="tv" placeholder="Enter tv" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="game" placeholder="Enter game" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="bio" placeholder="Enter bio" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="height" placeholder="Enter height" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="build" placeholder="Enter build" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="ethnicity" placeholder="Enter ethnicity" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="astrology" placeholder="Enter astrology" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="religion" placeholder="Enter religion" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="income" placeholder="Enter income" required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" ng-model="looking" placeholder="Enter looking" required>
+    </div>
+    <button type="submit" class="btn btn-default btn-block">Update</button>
+  </form>
+</div>
+
+
+
+
+<div class="">
+  <img ng-src="{{image}}" alt="" /><br />
+  {{sexuality}}, {{gender}}
+</div>

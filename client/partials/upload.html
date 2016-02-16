@@ -1,0 +1,9 @@
+<div class="col-md-4 col-md-offset-1">
+  <form name="form">
+    <div class="button" ngf-select ng-model="image" name="image" ngf-pattern="'image/*'"
+      ngf-accept="'image/*'" ngf-max-size="5MB" ngf-min-height="100"
+      ngf-resize="{width: 500, height: 500}">Select</div>
+    Image thumbnail: <img ngf-thumbnail="image || '/thumb.jpg'"><br />
+    <button type="submit" ng-click="submit()">submit</button>
+  </form>
+</div>
