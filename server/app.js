@@ -1,7 +1,6 @@
 // *** main dependencies *** //
 var express = require('express');
 var path = require('path');
-var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
@@ -22,7 +21,6 @@ var mainRoutes = require('./routes/index');
 var authRoutes = require('./routes/auth');
 
 // *** config middleware *** //
-app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
