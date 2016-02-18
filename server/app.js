@@ -1,4 +1,3 @@
-// *** main dependencies *** //
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -6,43 +5,31 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var multiparty = require('connect-multiparty');
 
-
-// *** config file *** //
 var config = require('../_config');
 
-
-// *** express instance *** //
 var app = express();
 
 multipartyMiddleware = multiparty();
 
-// *** routes *** //
 var mainRoutes = require('./routes/index');
 var authRoutes = require('./routes/auth');
 
-// *** config middleware *** //
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client')));
 
-
-// *** mongoose ** //
 mongoose.connect(config.MONGOLAB_URI);
 
-// *** main routes *** //
 app.use('/', mainRoutes);
 app.use('/auth', multipartyMiddleware, authRoutes);
 
-// *** handle 404 error *** //
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
-
-// *** error handlers *** //
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     var status = err.status || 500;

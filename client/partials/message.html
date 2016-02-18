@@ -1,20 +1,19 @@
-<div class="">
-  {{message.messageFrom.username}}
-  {{message.messageFrom._id}}
-
-  <p>
+<div class="row reply">
+  <div class="col-md-4 col-md-offset-4">
+    <h5>{{message.messageSubject}}</h5>
     {{message.messageBody}}
-  </p>
+  </div>
 </div>
-
-<div class="">
-  <form ng-submit="replyMessage(messageSubject, messageBody)">
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="messageSubject" placeholder="Re {{message.messageSubject}}" required>
-    </div>
-    <div class="form-group">
-      <input type="textarea" class="form-control" ng-model="messageBody" placeholder="Keep my attention here!" required>
-    </div>
-    <button type="submit" class="btn btn-default btn-block">Update</button>
-  </form>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <form ng-submit="replyMessage(messageSubject, messageBody)">
+      <div class="form-group">
+        <input type="text" class="form-control" ng-model="messageSubject" placeholder="Re {{message.messageSubject}}" required>
+      </div>
+      <div class="form-group">
+        <textarea rows="5" class="form-control" ng-model="messageBody" placeholder="Reply here!" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-default btn-block">Update</button>
+    </form>
+  </div>
 </div>

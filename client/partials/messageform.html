@@ -1,13 +1,15 @@
-Message me!
-
-<div class="">
-  <form ng-submit="sendMessage(messageSubject, messageBody)">
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="messageSubject" placeholder="Catch my attention here!" required>
-    </div>
-    <div class="form-group">
-      <input type="textarea" class="form-control" ng-model="messageBody" placeholder="Keep my attention here!" required>
-    </div>
-    <button type="submit" class="btn btn-default btn-block">Update</button>
-  </form>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <form ng-submit="sendMessage(messageSubject, messageBody)">
+      <div class="form-group">
+        <label for="messageSubject">Subject</label><br/>
+        <input type="text" class="form-control" ng-model="messageSubject" placeholder="Catch my attention here!" required>
+      </div>
+      <div class="form-group">
+        <label for="messageBody"></label><br/>
+        <textarea rows="5" type="text" class="form-control" ng-model="messageBody" placeholder="Keep my attention here!" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-default btn-block">Update</button>
+    </form>
+  </div>
 </div>

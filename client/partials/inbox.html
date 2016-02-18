@@ -1,8 +1,29 @@
+<div class="row">
+  <h3 class="text-center">Inbox</h3>
+</div>
+<div class="row">
+  <div class="col-md-2 col-md-offset-2">
+    From
+  </div>
+  <div class="col-md-2">
+    To
+  </div>
+  <div class="col-md-4">
+    Subject
+  </div>
+</div>
 <div ng-repeat="message in messages">
-  <a href="#/message/{{$index}}">
-    <div class="">
-      From: {{message.messageFrom.username}},  To: {{message.messageTo.username}}:<br/>
-      {{message.messageBody}}
+  <div class="row emails">
+    <a href="#/message/{{$index}}">
+    <div class="col-md-2 col-md-offset-2">
+      {{message.messageFrom.username}}
     </div>
-  </a>
+    <div class="col-md-2">
+      {{message.messageTo.username}}
+    </div>
+    <div class="col-md-4">
+      {{message.messageSubject}}
+    </div>
+    </a>
+  </div>
 </div>

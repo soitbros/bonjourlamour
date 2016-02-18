@@ -12,7 +12,6 @@ app.controller('signupCtrl', function($scope, $http, $auth, $location) {
         $location.path('/login');
       })
       .catch(function(response) {
-        console.log(response.data);
       });
 
   };

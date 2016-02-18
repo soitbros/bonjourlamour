@@ -17,15 +17,11 @@ app.controller('messageScreen', function($scope, $http, $routeParams){
 
   $scope.renderMessage();
 
-
   $scope.replyMessage = function(messageSubject, messageBody) {
-    // create payload
     var payload = {};
     payload.messageTo = $scope.message.messageFrom._id;
     payload.messageSubject = messageSubject;
     payload.messageBody = messageBody;
-    console.log(payload);
-    // send XHR request
     $http.put('/auth/messages', payload)
       .success(function (data, status) {
         if(status === 200 && data){

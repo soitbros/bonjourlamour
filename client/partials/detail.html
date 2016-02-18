@@ -1,12 +1,23 @@
 <div class="">
-  <img src="{{user.image}}" alt="" /><br />
-  {{user.username}} - {{user.gender}} - {{user.sexuality}} - {{user.age}} - {{user.height}}, {{user.build}}
-  {{user.username}} is looking for {{user.looking}}! Let's let {{user.pronoun_sub}} tell you more about {{user.pronoun_self}}:
-  <p>
-    {{user.bio}}
-  </p>
-  <p>
-    {{user.movie}} - {{user.book}} - {{user.music}} - {{user.tv}} - {{user.game}} - {{user.ethnicity}} - {{user.astrology}} - {{user.religion}} - {{user.income}}
-  </p>
-  <a href="#/messageform/{{user._id}}">Message me</a>
+  <div class="col-md-6">
+    <img src="{{user.image}}" alt="" />
+  </div>
+  <div class="col-md-6">
+    <h1>{{user.username}} <a href="#/messageform/{{user._id}}" class="glyphicon glyphicon-envelope" aria-hidden="true"></a></h1>
+    {{user.sexuality}} {{user.gender}}<br />
+    {{user.age}} <span ng-hide="!user.height">- {{user.height}}</span><span ng-hide="!user.build">, {{user.build}}</span><br />
+    {{user.username}} is looking for {{user.looking}}! Let's let {{user.pronoun_sub}} tell you more about {{user.pronoun_self}}:
+    <p>
+      {{user.bio}}
+    </p>
+    <span ng-hide="!user.movie && !user.book && !user.music && !user.tv && !user.game"><h4>Favorites</h4></span>
+    <p>
+      {{user.movie}}<span ng-hide="!user.book"> - {{user.book}}</span><span ng-hide="!user.music"> - {{user.music}}</span><span ng-hide="!user.tv"> - {{user.tv}}</span><span ng-hide="!user.game"> - {{user.game}}</span>
+    </p>
+    <span ng-hide="!user.ethnicity && !user.astrology && !user.religion && !user.income"><h4>Other Fun Things to Know</h4></span>
+    <p>
+      {{user.ethnicity}}<span ng-hide="!user.astrology"> - {{user.astrology}}</span><span ng-hide="!user.religion"> - {{user.religion}}</span><span ng-hide="!user.income"> - {{user.income}}</span>
+    </p>
+
+  </div>
 </div>

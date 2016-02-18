@@ -1,85 +1,120 @@
-<h1>Welcome, {{username}}!</h1>
-
-<hr><br>
-
-<div ng-if="message">
-  <h3>{{message}}</h3>
+<div class="row">
+  <h1 class="text-center">Profile</h1>
 </div>
-
-<div class="col-md-4 col-md-offset-1">
-  <h2>Add Username</h2>
-  <form ng-submit="updateUsername(email, username, sexuality, gender, image, age, pronoun_obj, pronoun_sub, pronoun_self, movie, book, music, tv, game, bio, height, build, ethnicity, astrology, religion, income, looking)">
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="username" placeholder="Enter a new name" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="sexuality" placeholder="Enter sexuality" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="gender" placeholder="Enter gender" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="image" placeholder="Whatever" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="age" placeholder="Enter birthdate" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="pronoun_obj" placeholder="Enter pronoun_obj" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="pronoun_sub" placeholder="Enter pronoun_sub" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="pronoun_self" placeholder="Enter pronoun_self" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="movie" placeholder="Enter movie" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="book" placeholder="Enter book" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="music" placeholder="Enter music" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="tv" placeholder="Enter tv" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="game" placeholder="Enter game" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="bio" placeholder="Enter bio" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="height" placeholder="Enter height" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="build" placeholder="Enter build" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="ethnicity" placeholder="Enter ethnicity" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="astrology" placeholder="Enter astrology" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="religion" placeholder="Enter religion" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="income" placeholder="Enter income" required>
-    </div>
-    <div class="form-group">
-      <input type="text" class="form-control" ng-model="looking" placeholder="Enter looking" required>
-    </div>
-    <button type="submit" class="btn btn-default btn-block">Update</button>
-  </form>
+<div class="row">
+  <div ng-if="message">
+    <h3 class="text-center">{{message}}</h3>
+  </div>
 </div>
-
-
-
-
-<div class="">
-  <img ng-src="{{image}}" alt="" /><br />
-  {{sexuality}}, {{gender}}
+<div class="row">
+  <div class="col-md-6">
+    <form ng-submit="updateUsername(email, username, sexuality, gender, image, age, looking, pronoun_obj, pronoun_sub, pronoun_self, bio, movie, book, music, tv, game, height, build, ethnicity, astrology, religion, income)">
+      <div class="required">
+        <h3>Conventional Required Stuff</h3>
+        <h4>User Info</h4>
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label><br/>
+        <input type="text" class="form-control" ng-model="username" placeholder="username" required>
+      </div>
+      <div class="form-group">
+        <label for="sexuality">Sexual Orientation</label><br/>
+        <input type="text" class="form-control" ng-model="sexuality" placeholder="sexuality" required>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender</label><br/>
+        <input type="text" class="form-control" ng-model="gender" placeholder="gender" required>
+      </div>
+      <div class="form-group">
+        <input type="hidden" class="form-control" ng-model="image" placeholder="Whatever" required>
+      </div>
+      <div class="form-group">
+        <label for="age">Birthdate</label><br/>
+        <input type="text" class="form-control" ng-model="age" placeholder="MM/DD/YYYY" required>
+      </div>
+      <div class="form-group">
+        <label for="looking">What are you on here for?</label><br/>
+        <input type="text" class="form-control" ng-model="looking" required>
+      </div>
+      <div class="pronouns">
+        <h3>Less Conventional Required Stuff</h3>
+        <h4>Pronouns & Bio</h4>
+      </div>
+      <div class="form-group">
+        <label for="pronoun_obj">Third-person Subject Pronoun</label><br/>
+        <input type="text" class="form-control" ng-model="pronoun_obj" required>
+      </div>
+      <div class="form-group">
+        <label for="pronoun_sub">Third-person Object Pronoun</label><br/>
+        <input type="text" class="form-control" ng-model="pronoun_sub" required>
+      </div>
+      <div class="form-group">
+        <label for="pronoun_self">Third-person Reflexive Pronoun</label><br/>
+        <input type="text" class="form-control" ng-model="pronoun_self" required>
+      </div>
+      <div class="form-group">
+        <label for="bio">Tell us about yourself</label><br/>
+        <textarea type="text" rows="3" class="form-control" ng-model="bio" placeholder="Enter bio" required></textarea>
+      </div>
+      <a href="#/upload">Upload a Photo</a>
+    </div>
+    <div class="col-md-6">
+      <div class="optional">
+        <h3>Optional Stuff</h3>
+        <h4>Favorites</h4>
+      </div>
+      <div class="form-group">
+        <label for="movie">Movie</label><br/>
+        <input type="text" class="form-control" ng-model="movie">
+      </div>
+      <div class="form-group">
+        <label for="book">Book</label><br/>
+        <input type="text" class="form-control" ng-model="book">
+      </div>
+      <div class="form-group">
+        <label for="music">Music Genre</label><br/>
+        <input type="text" class="form-control" ng-model="music">
+      </div>
+      <div class="form-group">
+        <label for="tv">TV Show</label><br/>
+        <input type="text" class="form-control" ng-model="tv">
+      </div>
+      <div class="form-group">
+        <label for="game">Video Game</label><br/>
+        <input type="text" class="form-control" ng-model="game">
+      </div>
+      <div class="">
+        <h4>Physical Traits</h4>
+      </div>
+      <div class="form-group">
+        <label for="height">Height</label><br/>
+        <input type="text" class="form-control" ng-model="height">
+      </div>
+      <div class="form-group">
+        <label for="build">Build</label><br/>
+        <input type="text" class="form-control" ng-model="build">
+      </div>
+      <div class="">
+        <h4>Good to Know</h4>
+      </div>
+      <div class="form-group">
+        <label for="ethnicity">Ethnicity</label><br/>
+        <input type="text" class="form-control" ng-model="ethnicity">
+      </div>
+      <div class="form-group">
+        <label for="astrology">Astrology</label><br/>
+        <input type="text" class="form-control" ng-model="astrology">
+      </div>
+      <div class="form-group">
+        <label for="religion">Religion</label><br/>
+        <input type="text" class="form-control" ng-model="religion">
+      </div>
+      <div class="form-group">
+        <label for="income">Income</label><br/>
+        <input type="text" class="form-control" ng-model="income">
+      </div>
+      <button type="submit" class="btn btn-default btn-block">Update</button>
+    </form>
+    </div>
+  </div>
 </div>

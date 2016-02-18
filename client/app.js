@@ -1,12 +1,7 @@
 var app = angular.module('MyApp', ['ngRoute', 'satellizer', 'ngFileUpload']);
 
 app.config(function($routeProvider, $authProvider, $locationProvider) {
-
-  // *** satellizer settings *** //
-  // $authProvider.loginOnSignup = false;
-  // $authProvider.loginRedirect = '/home';
-  // $authProvider.signupRedirect= '/login';
-
+  
   $routeProvider
     .when('/', {
       templateUrl: 'partials/welcome.html'

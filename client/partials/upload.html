@@ -1,9 +1,19 @@
-<div class="col-md-4 col-md-offset-1">
-  <form name="form">
-    <div class="button" ngf-select ng-model="image" name="image" ngf-pattern="'image/*'"
-      ngf-accept="'image/*'" ngf-max-size="5MB" ngf-min-height="100"
-      ngf-resize="{width: 500, height: 500}">Select</div>
-    Image thumbnail: <img ngf-thumbnail="image || '/thumb.jpg'"><br />
-    <button type="submit" ng-click="submit()">submit</button>
-  </form>
+<div class="row">
+  <h1 class="text-center">Image Upload</h1>
+</div>
+<div class="row">
+  <div class="col-md-2 col-md-offset-5">
+    <form name="form">
+      <div class="button text-center" ngf-select ng-model="image" name="image" ngf-pattern="'image/*'"
+        ngf-accept="'image/*'" ngf-max-size="5MB" ngf-min-height="100"
+        ngf-resize="{width: 500, height: 500}">Click to Select Image</div>
+      <button type="submit" ng-click="submit()">Upload</button>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2 col-md-offset-5 text-center">
+    Image preview:<br />
+    <img class="text-center" ngf-thumbnail="image">
+  </div>
 </div>

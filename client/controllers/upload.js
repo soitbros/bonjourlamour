@@ -4,15 +4,12 @@ app.controller('uploadCtrl', ['$scope', 'Upload', function ($scope, Upload) {
   $scope.email = JSON.parse(localStorage.getItem('currentUser')).email;
   $scope._id = JSON.parse(localStorage.getItem('currentUser'))._id;
 
-    // upload later on form submit or something similar
   $scope.submit = function() {
     if ($scope.form.image.$valid && $scope.image) {
       $scope.upload($scope.email, $scope.image, $scope._id);
-      console.log($scope.email, $scope.image, $scope._id);
     }
   };
 
-    // // upload on file select or drop
   $scope.upload = function (email, image, _id) {
       Upload.upload({
           url: 'auth/update',
